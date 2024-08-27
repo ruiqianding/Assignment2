@@ -16,4 +16,4 @@ In "/frontend/src/components/NewPhone.js", change the text in the yellow rectang
 In "/frontend/src/components/NewContact.js", change the syntax in the yellow rectangle from the first picture to the second picture
 
 4. Change Table Label in <tr> Element
-<img title="1" alt="1" src= 4.png width="600">
+<img title="4" alt="4" src= 4.png width="600">
