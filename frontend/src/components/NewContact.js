@@ -25,20 +25,14 @@ function NewContact(props) {
 
         setName('');
     }
+	
+    return (
+        <form className='new-contact' onSubmit={createContact}>
+            <input type='text' placeholder='Name' onChange={(e) => setName(e.target.value)} value={name}/>
+            <button className='button green' type='submit'>Create Contact</button>
+        </form>
+	);
+}
 
-    return ( 
-        <form onSubmit={createPhone} onClick={(e) => e.stopPropagation()} className='new-phone'> 
-        <select value={name} onChange={(e) => setName(e.target.value)}> 
-        <option value="" disabled>Select Name</option> 
-        <option value="Home">Home</option> 
-        <option value="Work">Work</option> 
-        <option value="Mobile">Mobile</option> 
-        <option value="Other">Other</option> 
-        </select> 
-        <input type='text' placeholder='Phone Number' onChange={(e) => setNumber(e.target.value)} value={number}/> 
-        <button className='button green' type='submit'>Add Your Phone Please</button> 
-        </form> 
-        ); 
-    } 
 
     export default NewContact;
