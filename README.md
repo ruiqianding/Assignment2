@@ -87,7 +87,7 @@ phone_type: {
 phone_number: {
     type: Sequelize.STRING
 },
-<img title="17" alt="17" src= 17.png width="400">
+<img title="17" alt="17" src= 17.png width="600">
 
 # b. In "/api/controllers/phone.controller", change the text in the yellow rectangles:
 # name --> phone_type
@@ -135,23 +135,23 @@ http PUT localhost/api/contacts/6 "address"="88 Wondful Road Flamington"
 Show Phone:
 # All phones of "contactId":6
 http GET localhost/api/contacts/6/phones
-<img title="29" alt="29" src= 29.png width="400">
+<img title="29" alt="29" src= 29.png width="600">
 
 # phone of "contactId":6, "Id":12
 http GET localhost/api/contacts/6/phones/12
-<img title="30" alt="30" src= 30.png width="400">
+<img title="30" alt="30" src= 30.png width="600">
 
 Add Phone:
 http POST localhost/api/contacts/16/phones phone_type="Work" phone_number="9008000000"
-<img title="31" alt="31" src= 31.png width="400">
+<img title="31" alt="31" src= 31.png width="600">
 
 Delete Phone:
 http DELETE localhost/api/contacts/6/phones/11
-<img title="32" alt="32" src= 32.png width="400">
+<img title="32" alt="32" src= 32.png width="600">
         
 Update Phone:
 http PUT localhost/api/contacts/16/phones/15 phone_type="Mobile" phone_number="0490080000"
-<img title="33" alt="33" src= 33.png width="400">
+<img title="33" alt="33" src= 33.png width="600">
 
 Task 4 – Expanding the Existing Tables
 
@@ -168,7 +168,7 @@ Task 4 – Expanding the Existing Tables
 <img title="41" alt="41" src= 41.png width="600">
 
 # e. In "/api/controllers/stats.controller.js", add the syntax in the yellow rectangle
-<img title="42" alt="42" src= 42.png width="500">
+<img title="42" alt="42" src= 42.png width="600">
 
 # f. In "/api/routes", create a new file: "Companies.routes.js"
 
@@ -179,19 +179,19 @@ Task 4 – Expanding the Existing Tables
 
 Show Company:
 http GET localhost/api/contacts/6/companies
-<img title="36" alt="36" src= 36.png width="400">
+<img title="36" alt="36" src= 36.png width="600">
 
 Add Company:
 http POST localhost/api/contacts/6/companies company_name="Wonderful Pty Ltd" company_address="88 Lucky Street Flemington"
-<img title="37" alt="37" src= 37.png width="400">
+<img title="37" alt="37" src= 37.png width="600">
 
 Delete Company:
 http DELETE localhost/api/contacts/6/companies/2
-<img title="38" alt="38" src= 38.png width="400">
+<img title="38" alt="38" src= 38.png width="600">
         
 Update Company:
 http PUT localhost/api/contacts/16/companies/3 company_name="Evergreen Land Pty Ltd" company_address="121 Maxwell Road Long Lake"
-<img title="39" alt="39" src= 39.png width="400">
+<img title="39" alt="39" src= 39.png width="600">
 
 Task 5 – Front-End for Companies Table
 
@@ -259,7 +259,7 @@ Task 5 – Front-End for Companies Table
     );
 
 # g. In "/frontend/src/components/ContactList.js", change the text in the yellow rectangle to "Add New Contact"
-<img title="44" alt="44" src= 44.png width="400">
+<img title="44" alt="44" src= 44.png width="600">
 
 # h. In "/frontend/src/components/NewContact.js", add the syntax in the yellow rectangle
 <img title="49" alt="49" src= 49.png width="600">
@@ -369,5 +369,5 @@ Task 5 – Front-End for Companies Table
     font-style: italic; /* Make the text italic */
 }
 
-# n In "/frontend/src/App.js", change the text in the yellow rectangle to "Click a contact to view associated phone numbers and companies"
+# n. In "/frontend/src/App.js", change the text in the yellow rectangle to "Click a contact to view associated phone numbers and companies"
 <img title="48" alt="48" src= 48.png width="600">
