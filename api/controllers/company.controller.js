@@ -1,16 +1,16 @@
 const db = require("../models");
-const Phones = db.phones;
+const Companies = db.companies;
 const Op = db.Sequelize.Op;
 
-// Create phone
+// Create company
 exports.create = (req, res) => {
-    const phone = {
-        phone_type: req.body.phone_type,
-        phone_number: req.body.phone_number,
+    const company = {
+        company_name: req.body.company_name,
+        company_address: req.body.company_address,
         contactId: parseInt(req.params.contactId)
     };
 
-    Phones.create(phone)
+    Companies.create(company)
         .then(data => {
             res.send(data);
         })
@@ -22,10 +22,10 @@ exports.create = (req, res) => {
         });
 };
 
-// Get all phones
+// Get all companies
 exports.findAll = (req, res) => {
 
-    Phones.findAll({
+    Companies.findAll({
         where: {
             contactId: parseInt(req.params.contactId)
         }
@@ -40,12 +40,12 @@ exports.findAll = (req, res) => {
         });
 };
 
-// Get one phone by id
+// Get one company by id
 exports.findOne = (req, res) => {
-    Phones.findOne({
+    Companies.findOne({
         where: {
             contactId: req.params.contactId,
-            id: req.params.phoneId
+            company_id: req.params.companyId
         }
     })
         .then(data => {
@@ -58,52 +58,52 @@ exports.findOne = (req, res) => {
         });
 };
 
-// Update one phone by id
+// Update one company by id
 exports.update = (req, res) => {
-    const id = req.params.phoneId;
+    const company_id = req.params.companyId;
 
-    Phones.update(req.body, {
-        where: { id: id, contactId: req.params.contactId }
+    Companies.update(req.body, {
+        where: { company_id: company_id, contactId: req.params.contactId }
     })
     .then(num => {
         if (num == 1) {
             res.send({
-                message: "Phone was updated successfully."
+                message: "Company was updated successfully."
             });
         } else {
             res.send({
-                message: `Cannot update Phone`
+                message: `Cannot update Company`
             });
         }
     })
     .catch(err => {
         res.status(500).send({
-            message: "Error updating Phone with id=" + id
+            message: "Error updating Company with id=" + company_id
         });
     });
 };
 
-// Delete one phone by id
+// Delete one company by id
 exports.delete = (req, res) => {
-    const id = req.params.phoneId;
+    const company_id = req.params.companyId;
 
-    Phones.destroy({
-        where: { id: id, contactId: req.params.contactId }
+    Companies.destroy({
+        where: { company_id: company_id, contactId: req.params.contactId }
     })
     .then(num => {
         if (num == 1) {
             res.send({
-                message: "Phone was deleted successfully!"
+                message: "Company was deleted successfully!"
             });
         } else {
             res.send({
-                message: `Cannot delete Phone`
+                message: `Cannot delete Company`
             });
         }
     })
     .catch(err => {
         res.status(500).send({
-            message: "Could not delete Phone with id=" + id
+            message: "Could not delete Company with id=" + company_id
         });
     });
 };

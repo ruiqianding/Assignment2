@@ -1,14 +1,14 @@
 module.exports = (sequelize, Sequelize) => {
-    const Phone = sequelize.define("phone", {
-        id: {
+    const Company = sequelize.define("company", {
+        company_id: {
             type: Sequelize.INTEGER,
             autoIncrement: true,
             primaryKey: true,
         },
-        phone_type: {
+        company_name: {
             type: Sequelize.STRING
         },
-        phone_number: {
+        company_address: {
             type: Sequelize.STRING
         },
         contactId: {
@@ -20,5 +20,5 @@ module.exports = (sequelize, Sequelize) => {
         }
     });
   
-    return Phone;
+    return Company;
 };
