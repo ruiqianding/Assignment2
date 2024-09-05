@@ -72,7 +72,7 @@ function Contact(props) {
                 <p className='contact-name'>Name: {contact.name}</p>
                 <p className='contact-address'>Address: {contact.address}</p>
                 <p className='contact-toggle' onClick={() => setExpanded(!expanded)}>
-                    Click the contact to {expanded ? 'collapse' : 'expand'} {contact.name}'s phones and companies
+                    Click here to {expanded ? 'collapse' : 'expand'} {contact.name}'s phones and companies
                 </p>
 
             </div>
